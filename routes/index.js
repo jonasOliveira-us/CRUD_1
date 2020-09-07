@@ -5,7 +5,7 @@ router.get('/edit/:id', function(req, res) {
   var id = req.params.id;
   global.db.findOne(id, (e, docs) => {
       if(e) { return console.log(e); }
-      res.render('new', { title: 'Edição de Cliente', doc: docs[0], action: '/edit/' + docs[0]._id });
+      res.render('new', { title: 'Edição dos Alunos', doc: docs[0], action: '/edit/' + docs[0]._id });
     });
 })
 
