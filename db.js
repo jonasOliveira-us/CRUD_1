@@ -1,6 +1,6 @@
 const mongoClient = require("mongodb").MongoClient;
 mongoClient.connect("mongodb://localhost", { useUnifiedTopology: true })
-            .then(conn => global.conn = conn.db("workshoptdc"))
+            .then(conn => global.conn = conn.db("CRUD"))
             .catch(err => console.log(err))
 
 const TAMANHO_PAGINA = 5; 

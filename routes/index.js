@@ -12,21 +12,31 @@ router.get('/edit/:id', function(req, res) {
 router.post('/edit/:id', function(req, res) {
   var id = req.params.id;
   var nome = req.body.nome;
+  var sobrenome = req.body.sobrenome;
   var idade = parseInt(req.body.idade);
-  global.db.update(id, {nome, idade}, (e, result) => {
+  var sexo = req.body.sexo;
+  var nomeMae = req.body.nomeMae;
+  var matricula = parseInt(req.body.matricula);
+  var turno = req.body.turno;
+  global.db.update(id, {nome, sobrenome, idade, sexo, nomeMae, matricula, turno}, (e, result) => {
         if(e) { return console.log(e); }
         res.redirect('/');
     });
 });
 
 router.get('/new', function(req, res, next) {
-  res.render('new', { title: 'Novo Cadastro', doc: {"nome":"","idade":""}, action: '/new' });
+  res.render('new', { title: 'Novo Cadastro', doc: {"nome":"","sobrenome":" ","idade":""}, action: '/new' });
 });
 
 router.post('/new', function(req, res) {
   var nome = req.body.nome;
+  var sobrenome = req.body.sobrenome;
   var idade = parseInt(req.body.idade);
-  global.db.insert({nome, idade}, (err, result) => {
+  var sexo = req.body.sexo;
+  var nomeMae = req.body.nomeMae;
+  var matricula = parseInt(req.body.matricula);
+  var turno = req.body.turno;
+  global.db.insert({nome, sobrenome, idade, sexo, nomeMae, matricula, turno}, (err, result) => {
           if(err) { return console.log(err); }
           res.redirect('/');
       })
@@ -46,7 +56,7 @@ router.get('/:pagina?', async function(req, res) {
   const docs = await global.db.findAll(pagina);
   const count = await global.db.countAll();
   const qtdPaginas = Math.ceil(count / global.db.TAMANHO_PAGINA);
-  res.render('index', { title: 'Lista de Clientes', docs, count, qtdPaginas, pagina });
+  res.render('index', { title: 'Lista de Alunos', docs, count, qtdPaginas, pagina });
 })
 
 module.exports = router;

@@ -12,6 +12,8 @@
     <td>
     <a href="/edit/<%= customer._id %>">
       <%= customer.nome %>
+      <%= customer.sobrenome %>
+
     </a>
   </td>
   <td>
@@ -34,5 +36,5 @@
   </ul>
 </nav>
   <hr />
-  <a href="/new" class="btn btn-primary">Cadastrar novo cliente</a>
+  <a href="/new" class="btn btn-primary">Cadastrar novo Aluno</a>
  <%- include('bottom.ejs') %>

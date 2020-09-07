@@ -6,7 +6,7 @@
 
 global.db = require('../db');
 var app = require('../app');
-var debug = require('debug')('workshoptdc:server');
+var debug = require('debug')('CRUD:server');
 var http = require('http');
 
 /**
