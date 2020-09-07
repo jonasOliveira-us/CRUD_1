@@ -18,7 +18,9 @@ router.post('/edit/:id', function(req, res) {
   var nomeMae = req.body.nomeMae;
   var matricula = parseInt(req.body.matricula);
   var turno = req.body.turno;
-  global.db.update(id, {nome, sobrenome, idade, sexo, nomeMae, matricula, turno}, (e, result) => {
+  var endereco = req.body.endereco;
+
+  global.db.update(id, {nome, sobrenome, idade, sexo, nomeMae, matricula, turno,endereco}, (e, result) => {
         if(e) { return console.log(e); }
         res.redirect('/');
     });
@@ -36,7 +38,8 @@ router.post('/new', function(req, res) {
   var nomeMae = req.body.nomeMae;
   var matricula = parseInt(req.body.matricula);
   var turno = req.body.turno;
-  global.db.insert({nome, sobrenome, idade, sexo, nomeMae, matricula, turno}, (err, result) => {
+  var endereco = req.body.endereco;
+  global.db.insert({nome, sobrenome, idade, sexo, nomeMae, matricula, turno,endereco}, (err, result) => {
           if(err) { return console.log(err); }
           res.redirect('/');
       })
