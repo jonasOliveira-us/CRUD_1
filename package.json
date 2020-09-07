@@ -1,0 +1,33 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonasOliveira-us/CRUD_1"
+  },
+  "keywords": [
+    "crud"
+  ],
+  "author": "Jonas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonasOliveira-us/CRUD_1"
+  },
+  "homepage": " ",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.1.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "morgan": "^1.10.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
